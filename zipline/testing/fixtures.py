@@ -1134,7 +1134,7 @@ class WithDataPortal(WithBcolzMinuteBarReader, WithAdjustmentReader):
 
     def make_data_portal(self):
         return DataPortal(
-            self.env,
+            self.env.asset_finder,
             self.trading_schedule,
             equity_daily_reader=(
                 self.bcolz_daily_bar_reader

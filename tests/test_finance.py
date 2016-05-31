@@ -226,7 +226,7 @@ class FinanceTestCase(WithLogger,
                 equity_minute_reader = BcolzMinuteBarReader(tempdir.path)
 
                 data_portal = DataPortal(
-                    env, self.trading_schedule,
+                    env.asset_finder, self.trading_schedule,
                     equity_minute_reader=equity_minute_reader,
                 )
             else:
@@ -253,7 +253,7 @@ class FinanceTestCase(WithLogger,
                 equity_daily_reader = BcolzDailyBarReader(path)
 
                 data_portal = DataPortal(
-                    env, self.trading_schedule,
+                    env.asset_finder, self.trading_schedule,
                     equity_daily_reader=equity_daily_reader,
                 )
 
